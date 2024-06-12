@@ -30,10 +30,10 @@ function Index() {
     <Layout>
       <Section>
         <GridContainer>
-          <CPRCContainer>1</CPRCContainer>
-          <CPRCContainer>2</CPRCContainer>
-          <CPRCContainer>3</CPRCContainer>
-          <CPRCContainer>4</CPRCContainer>
+          <CPRCContainer><h2>Create</h2></CPRCContainer>
+          <CPRCContainer><h2>Perform</h2></CPRCContainer>
+          <CPRCContainer><h2>Respond</h2></CPRCContainer>
+          <CPRCContainer><h2>Connect</h2></CPRCContainer>
         </GridContainer>
       </Section>
       <Section></Section>
