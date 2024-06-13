@@ -33,7 +33,7 @@
     border-style: solid;
     border-radius: 6px;
     border-width: 3px;
-    transition: scale 0.3s ease-in-out, color 0.15s, border-color 0.15s, background-color 0.15s;
+    transition: scale 0.3s ease-in-out, color 0.1s, border-color 0.1s, background-color 0.1s;
     cursor: pointer;
     user-select: none;
 }
