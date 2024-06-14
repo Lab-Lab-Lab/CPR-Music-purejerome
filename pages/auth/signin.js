@@ -48,7 +48,7 @@ export default function SignIn({ csrfToken }) {
               Username
             </Form.Label>
             <Col md={4} xs={10}>
-              <Form.Control type="text" name="username" placeholder="Username" style={{ borderRadius: '30px' }} />
+              <Form.Control type="text" name="username" placeholder="Username" style={{ borderRadius: '30px', borderWidth: '3px' }} />
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3 d-flex justify-content-center" controlId="formPassword" style={{ width: '100%' }}>
@@ -61,7 +61,7 @@ export default function SignIn({ csrfToken }) {
                 name="password"
                 placeholder="Password"
                 className="position-relative"
-                style={{ borderRadius: '30px' }}
+                style={{ borderRadius: '30px', borderWidth: '3px', paddingRight: '50px' }}
               />
               <button
                 type='button'
@@ -119,7 +119,7 @@ const errors = {
 function SignInError({ error = errors.default }) {
   const errorMessage = error && (errors[error] ?? errors.default);
   return (
-    <Alert variant="danger">
+    <Alert variant="danger" style={{ width: 'fit-content' }}>
       {errorMessage}{' '}
       {error === 'CredentialsSignin' && (
         <a href={`${process.env.NEXT_PUBLIC_BACKEND_HOST}/accounts/password/reset/`}>
