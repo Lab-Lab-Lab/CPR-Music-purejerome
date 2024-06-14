@@ -78,7 +78,7 @@ function About() {
         team, don't hesitate to drop us a line at{' '}
         <a target="_blank" rel="noopener noreferrer" href="mailto:feedback@musiccpr.org">feedback@musiccpr.org</a>
       </p>
-      
+
       <h2>Investigators</h2>
 
       <ul>
@@ -118,6 +118,7 @@ function About() {
           <a target="_blank" rel="noopener noreferrer" href="https://portfolium.com/AlexDumo" >Alex Dumouchelle</a>{' '}
           (Undergraduate Student, James Madison University)
         </li>
+        <li>Jerome Donfack (Undergraduate Student, James Madison University)</li>
         <li>Zoey Fox (Consultant)</li>
         <li>Jonah Giblin (Undergraduate Student, James Madison University)</li>
         <li>
@@ -130,14 +131,14 @@ function About() {
         </li>
         <li>
           <a target="_blank" rel="noopener noreferrer" href="https://mfwolffe.github.io/">Matt Wolffe</a>
-            (Undergraduate, James Madison University)
+          (Undergraduate, James Madison University)
         </li>
         <li>
           Thomas Hassett (Undergraduate Student Alumnus, School of Music;
           Innovation Leader, Center for Inclusive Music Engagement; James
           Madison University)
         </li>
-        <li><a target = "_blank" rel="noopener nonreferrer" href="https://www.linkedin.com/in/chris-hopkins-382238221/">
+        <li><a target="_blank" rel="noopener nonreferrer" href="https://www.linkedin.com/in/chris-hopkins-382238221/">
           Chris Hopkins </a>{' '}(Undergraduate Student, James Madison University)</li>
         <li>
           William Jedrzejczak (Undergraduate Student,
