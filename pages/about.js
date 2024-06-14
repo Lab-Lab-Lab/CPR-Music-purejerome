@@ -3,6 +3,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 import Layout from '../components/layout';
 
 function About() {
+  //aboutpage
   return (
     <Layout>
       <h1 className="mt-3">About MusicCPR</h1>
