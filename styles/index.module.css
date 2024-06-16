@@ -176,6 +176,11 @@
         align-items: flex-start;
     }
     
+    .container .sectionHeading h2 {
+        writing-mode: horizontal-tb !important;
+        transform: rotate(0deg) !important;
+    }
+    
     .sectionHeading{
         width: 100%;
     }
@@ -189,11 +194,6 @@
     .gridContainer{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-    
-    .container .sectionHeading h2{
-        writing-mode: horizontal-tb !important;
-        transform: rotate(0deg) !important;
     }
 }
 
