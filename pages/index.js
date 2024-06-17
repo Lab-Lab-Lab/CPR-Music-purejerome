@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef } from 'react';
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
@@ -30,12 +30,12 @@ function CPRCContainer({ children, style, id, scrollID }) {
   return <div className={styles.cprcContainer} style={style} id={id} onClick={scrollTo}>{children}</div>
 }
 
-function BackToTop({ style, id }) {
+const BackToTop = forwardRef(({ style, id }, ref) => {
   function scrollTo() {
     window.scrollTo(0, 0);
   };
-  return <button className={styles.backToTopButton} style={style} id={id} onClick={scrollTo}>Back To Top</button>
-}
+  return <button className={styles.backToTopButton} style={style} id={id} ref={ref} onClick={scrollTo}>Back To Top</button>
+});
 
 function InfoContainer({ children, style, id }) {
   return <div className={styles.infoContainer} style={style} id={id}>{children}</div>
@@ -56,8 +56,27 @@ function SectionHeading({ title, style, id, img }) {
 }
 
 function Index() {
+  let button = useRef(null);
   useEffect(() => {
-    // const observer = new IntersectionObserver();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            if (button) {
+              button.current.classList.add(styles.buttonGone);
+            }
+          }
+          else {
+            button.current.classList.remove(styles.buttonGone);
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      }
+    );
+
+    observer.observe(document.getElementById('top'));
   });
   return (
     <Layout>
@@ -93,7 +112,7 @@ function Index() {
           <SectionHeading title="Connect" img="teachingmusic.jpg" />
         </InfoContainer>
       </Section>
-      <BackToTop />
+      <BackToTop ref={button} />
     </Layout>
   );
 }

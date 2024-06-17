@@ -114,15 +114,21 @@
     bottom: 10px;
     right: 10px;
     /* transform: translateX(-110%); */
-    margin-bottom: 5px;
-    width: 200px;
+    width: 130px;
     height: 50px;
+    padding: 1px;
     font-size: 1.2rem;
     border-radius: 3px;
     font-weight: 700;
     background-color: rgba(0, 0, 0, 0.192);
     border-color: rgba(0, 0, 0, 0.422);
-    transition: scale 0.01s ease-in-out, transform 0.01s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    transition: 
+        scale 0.01s ease-in-out, 
+        transform 0.01s ease-in-out, 
+        visibility 0.25s ease-in-out 0.15s, 
+        opacity 0.25s ease-in-out 0.15s;
     color: white;
     user-select: none;
 }
@@ -132,6 +138,11 @@
     border-color: rgba(255, 255, 255, 0.422);
     scale: 1.07;
     /* transform: translateX(-103%); */
+}
+
+.buttonGone{
+    opacity: 0;
+    visibility: hidden;
 }
 
 .sectionHeading{
