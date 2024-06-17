@@ -56,6 +56,9 @@ function SectionHeading({ title, style, id, img }) {
 }
 
 function Index() {
+  useEffect(() => {
+    // const observer = new IntersectionObserver();
+  });
   return (
     <Layout>
       <Section>
@@ -71,29 +74,26 @@ function Index() {
           <SectionHeading title="Create" img="createimg.jpg" />
           <Desciption><p>hi</p></Desciption>
         </InfoContainer>
-        <BackToTop />
       </Section>
       <Section id="perform" style={{ backgroundColor: 'rgb(253, 253, 115)' }}>
         <InfoContainer>
           <Desciption><p>hi</p></Desciption>
           <SectionHeading title="Perform" img="performmusic.jpg" />
         </InfoContainer>
-        <BackToTop />
       </Section>
       <Section id="respond" style={{ backgroundColor: 'rgb(56, 144, 56)' }}>
         <InfoContainer>
           <SectionHeading title="Respond" img="classroom.jpg" />
           <Desciption><p>hi</p></Desciption>
         </InfoContainer>
-        <BackToTop />
       </Section>
       <Section id="connect" style={{ backgroundColor: 'rgb(78, 78, 255)' }}>
         <InfoContainer>
           <Desciption><p>hi</p></Desciption>
           <SectionHeading title="Connect" img="teachingmusic.jpg" />
         </InfoContainer>
-        <BackToTop />
       </Section>
+      <BackToTop />
     </Layout>
   );
 }
