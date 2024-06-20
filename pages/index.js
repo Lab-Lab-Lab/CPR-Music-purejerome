@@ -62,12 +62,14 @@ function Index() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            if (button) {
-              button.current.classList.add(styles.buttonGone);
+            if (button.current) {
+              button.current.classList.remove(styles.buttonView);
             }
           }
           else {
-            button.current.classList.remove(styles.buttonGone);
+            if (button.current) {
+              button.current.classList.add(styles.buttonView);
+            }
           }
         });
       },

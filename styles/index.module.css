@@ -64,45 +64,45 @@
 
 .cprcContainer:nth-of-type(1){
     border-color: #e25651;
-    color: #e25651;
+    color: #000000;
     background-color: #e2565141;
 }
 .cprcContainer:nth-of-type(1):active{
     border-color: #a43d3a;
-    color: #a43d3a;
+    color: #00000092;
     background-color: #a43d3a41;
 }
 
 .cprcContainer:nth-of-type(2){
     border-color: #e2b951;
-    color: #e2b951;
+    color: #000000;
     background-color: #e2b95141;
 }
 .cprcContainer:nth-of-type(2):active{
     border-color: #b49441;
-    color: #b49441;
+    color: #00000092;
     background-color: #b4944141;
 }
 
 .cprcContainer:nth-of-type(3){
     border-color: #73e251;
-    color: #73e251;
+    color: #000000;
     background-color: #73e25141;
 }
 .cprcContainer:nth-of-type(3):active{
     border-color: #52a23a;
-    color: #52a23a;
+    color: #00000092;
     background-color: #52a23a41;
 }
 
 .cprcContainer:nth-of-type(4){
     border-color: #5195e2;
-    color: #5195e2;
+    color: #000000;
     background-color: #5195e241;
 }
 .cprcContainer:nth-of-type(4):active{
     border-color: #3c6ea8;
-    color: #3c6ea8;
+    color: #00000092;
     background-color: #3c6ea841;
 }
 
@@ -119,8 +119,8 @@
     font-weight: 700;
     background-color: rgba(0, 0, 0, 0.192);
     border-color: rgba(0, 0, 0, 0.422);
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     transition: 
         scale 0.01s ease-in-out, 
         transform 0.01s ease-in-out, 
@@ -137,9 +137,9 @@
     /* transform: translateX(-103%); */
 }
 
-.buttonGone{
-    opacity: 0;
-    visibility: hidden;
+.buttonView{
+    opacity: 1;
+    visibility: visible;
 }
 
 .sectionHeading{
