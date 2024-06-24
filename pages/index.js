@@ -92,26 +92,26 @@ function Index() {
       </Section>
       <Section id="create" style={{ backgroundColor: 'rgb(255, 126, 126)' }}>
         <InfoContainer>
-          <SectionHeading title="Create" img="createimg.jpg" />
+          <SectionHeading title="Create" img="createimg.jpg" style={{ color: 'red' }} />
           <Desciption><p>hi</p></Desciption>
         </InfoContainer>
       </Section>
       <Section id="perform" style={{ backgroundColor: 'rgb(253, 253, 115)' }}>
         <InfoContainer>
           <Desciption><p>hi</p></Desciption>
-          <SectionHeading title="Perform" img="performmusic.jpg" />
+          <SectionHeading title="Perform" img="performmusic.jpg" style={{ color: 'yellow' }} />
         </InfoContainer>
       </Section>
       <Section id="respond" style={{ backgroundColor: 'rgb(56, 144, 56)' }}>
         <InfoContainer>
-          <SectionHeading title="Respond" img="classroom.jpg" />
+          <SectionHeading title="Respond" img="classroom.jpg" style={{ color: 'green' }} />
           <Desciption><p>hi</p></Desciption>
         </InfoContainer>
       </Section>
       <Section id="connect" style={{ backgroundColor: 'rgb(78, 78, 255)' }}>
         <InfoContainer>
           <Desciption><p>hi</p></Desciption>
-          <SectionHeading title="Connect" img="teachingmusic.jpg" />
+          <SectionHeading title="Connect" img="teachingmusic.jpg" style={{ color: 'blue' }} />
         </InfoContainer>
       </Section>
       <BackToTop ref={button} />
