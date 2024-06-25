@@ -22,10 +22,17 @@ function GridContainer({ children, style, id }) {
 }
 
 function CPRCContainer({ children, style, id, scrollID }) {
+  // document.getElementById(scrollID).clientTop;
   function scrollTo() {
     document.getElementById(scrollID).scrollIntoView({
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
+    // window.scrollTo();
+    // console.log(document.getElementById(scrollID).clientTop);
+    // const rect = document.getElementById(scrollID).getBoundingClientRect();
+    // const scrollTop = window.scrollY;
+    // let scrollToArea = rect.top - scrollTop;
+    // window.scrollTo(0, scrollToArea - 35);
   };
   return <div className={styles.cprcContainer} style={style} id={id} onClick={scrollTo}>{children}</div>
 }
