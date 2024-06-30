@@ -22,17 +22,10 @@ function GridContainer({ children, style, id }) {
 }
 
 function CPRCContainer({ children, style, id, scrollID }) {
-  // document.getElementById(scrollID).clientTop;
   function scrollTo() {
     document.getElementById(scrollID).scrollIntoView({
       behavior: 'smooth',
     })
-    // window.scrollTo();
-    // console.log(document.getElementById(scrollID).clientTop);
-    // const rect = document.getElementById(scrollID).getBoundingClientRect();
-    // const scrollTop = window.scrollY;
-    // let scrollToArea = rect.top - scrollTop;
-    // window.scrollTo(0, scrollToArea - 35);
   };
   return <div className={styles.cprcContainer} style={style} id={id} onClick={scrollTo}>{children}</div>
 }
@@ -53,10 +46,10 @@ function Desciption({ children, style, id }) {
 }
 
 function SectionHeading({ title, style, id, img }) {
-  let newStyle = style || {};
-  newStyle.backgroundImage = `url(${img})`;
+  // let newStyle = style || {};
+  // newStyle.backgroundImage = `url(${img})`;
   return (
-    <div className={styles.sectionHeading} style={newStyle} id={id}>
+    <div className={styles.sectionHeading} style={style} id={id}>
       <h2>{title}</h2>
     </div>
   );
@@ -89,36 +82,36 @@ function Index() {
   });
   return (
     <Layout>
-      <Section>
-        <GridContainer id="top">
-          <CPRCContainer scrollID={"create"}><h2>Create</h2></CPRCContainer>
-          <CPRCContainer scrollID={"perform"}><h2>Perform</h2></CPRCContainer>
-          <CPRCContainer scrollID={"respond"}><h2>Respond</h2></CPRCContainer>
-          <CPRCContainer scrollID={"connect"}><h2>Connect</h2></CPRCContainer>
+      <Section id="top">
+        <GridContainer>
+          <CPRCContainer scrollID="create"><h2>Create</h2></CPRCContainer>
+          <CPRCContainer scrollID="perform"><h2>Perform</h2></CPRCContainer>
+          <CPRCContainer scrollID="respond"><h2>Respond</h2></CPRCContainer>
+          <CPRCContainer scrollID="connect"><h2>Connect</h2></CPRCContainer>
         </GridContainer>
       </Section>
       <Section id="create" style={{ backgroundColor: 'rgb(255, 126, 126)' }}>
         <InfoContainer>
-          <SectionHeading title="Create" img="createimg.jpg" style={{ color: 'red' }} />
+          <SectionHeading title="Create" img="createimg.jpg" />
           <Desciption><p>hi</p></Desciption>
         </InfoContainer>
       </Section>
       <Section id="perform" style={{ backgroundColor: 'rgb(253, 253, 115)' }}>
         <InfoContainer>
           <Desciption><p>hi</p></Desciption>
-          <SectionHeading title="Perform" img="performmusic.jpg" style={{ color: 'yellow' }} />
+          <SectionHeading title="Perform" img="performmusic.jpg" />
         </InfoContainer>
       </Section>
       <Section id="respond" style={{ backgroundColor: 'rgb(56, 144, 56)' }}>
         <InfoContainer>
-          <SectionHeading title="Respond" img="classroom.jpg" style={{ color: 'green' }} />
+          <SectionHeading title="Respond" img="classroom.jpg" />
           <Desciption><p>hi</p></Desciption>
         </InfoContainer>
       </Section>
       <Section id="connect" style={{ backgroundColor: 'rgb(78, 78, 255)' }}>
         <InfoContainer>
           <Desciption><p>hi</p></Desciption>
-          <SectionHeading title="Connect" img="teachingmusic.jpg" style={{ color: 'blue' }} />
+          <SectionHeading title="Connect" img="teachingmusic.jpg" />
         </InfoContainer>
       </Section>
       <BackToTop ref={button} />
