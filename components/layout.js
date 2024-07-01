@@ -8,6 +8,7 @@ import styles from './layout.module.css';
 import { getUserProfile, gotUser } from '../actions';
 import { Spinner } from 'react-bootstrap';
 import React, { Fragment } from 'react';
+import Container from 'react-bootstrap/Container';
 
 const PUBLIC_PATHS = ['/', '/about', '/auth/signin', '/api/auth/signout'];
 
@@ -77,7 +78,10 @@ export default function Layout({ children }) {
       <Navigation />
       {(!PUBLIC_PATHS.includes(router.pathname) && userLoaded && token) ||
         PUBLIC_PATHS.includes(router.pathname) ? (
-        <>{children}</>
+        // <>{children}</>
+        <Container fluid style={{padding: 0}}>
+          <main>{children}</main>
+        </Container>
       ) : (
         <Spinner
           as="span"
