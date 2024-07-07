@@ -75,7 +75,7 @@
 }
 
 .exitButton{
-    position: sticky;
+    position: fixed;
     top: 2px;
     left: 2px;
     border-radius: 100px;
@@ -84,6 +84,7 @@
     height: 36px;
     background-color: red;
     border-style: none;
+    z-index: 10;
 }
 
 .exitButton:active{
