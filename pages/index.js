@@ -42,7 +42,7 @@ function InfoContainer({ children, style, id }) {
 }
 
 function Desciption({ children, style, id }) {
-  return <div className={styles.descContainer} style={style} id={id}>{children}</div>
+  return <div className={styles.descContainer} style={style} id={id}><p>{children}</p></div>
 }
 
 function SectionHeading({ title, style, id, img }) {
@@ -81,7 +81,7 @@ function Index() {
     observer.observe(document.getElementById('top'));
   });
   return (
-    <Layout>
+    <Layout noPadding>
       <Section id="top">
         <GridContainer>
           <CPRCContainer scrollID="create"><h2>Create</h2></CPRCContainer>
@@ -93,24 +93,24 @@ function Index() {
       <Section id="create" style={{ backgroundColor: 'rgb(255, 126, 126)' }}>
         <InfoContainer>
           <SectionHeading title="Create" img="createimg.jpg" />
-          <Desciption><p>hi</p></Desciption>
+          <Desciption>Incubating creativity and artistic talents.</Desciption>
         </InfoContainer>
       </Section>
       <Section id="perform" style={{ backgroundColor: 'rgb(253, 253, 115)' }}>
         <InfoContainer>
-          <Desciption><p>hi</p></Desciption>
+          <Desciption>Present and display talent in music.</Desciption>
           <SectionHeading title="Perform" img="performmusic.jpg" />
         </InfoContainer>
       </Section>
       <Section id="respond" style={{ backgroundColor: 'rgb(56, 144, 56)' }}>
         <InfoContainer>
           <SectionHeading title="Respond" img="classroom.jpg" />
-          <Desciption><p>hi</p></Desciption>
+          <Desciption>Understand and interpret meaning in music.</Desciption>
         </InfoContainer>
       </Section>
       <Section id="connect" style={{ backgroundColor: 'rgb(78, 78, 255)' }}>
         <InfoContainer>
-          <Desciption><p>hi</p></Desciption>
+          <Desciption>Relate art with your beliefs and others.</Desciption>
           <SectionHeading title="Connect" img="teachingmusic.jpg" />
         </InfoContainer>
       </Section>

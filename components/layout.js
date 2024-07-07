@@ -12,7 +12,7 @@ import Container from 'react-bootstrap/Container';
 
 const PUBLIC_PATHS = ['/', '/about', '/auth/signin', '/api/auth/signout'];
 
-export default function Layout({ children }) {
+export default function Layout({ children, noPadding = false }) {
   const router = useRouter();
 
   const { status, data } = useSession({
@@ -79,7 +79,7 @@ export default function Layout({ children }) {
       {(!PUBLIC_PATHS.includes(router.pathname) && userLoaded && token) ||
         PUBLIC_PATHS.includes(router.pathname) ? (
         // <>{children}</>
-        <Container fluid style={{padding: 0}}>
+        <Container fluid style={noPadding ? {padding: 0} : undefined}>
           <main>{children}</main>
         </Container>
       ) : (
