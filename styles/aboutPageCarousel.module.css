@@ -76,8 +76,8 @@
 
 .exitButton{
     position: fixed;
-    top: 2px;
-    left: 2px;
+    top: 5px;
+    left: 5px;
     border-radius: 100px;
     border-color: transparent;
     width: 36px;
