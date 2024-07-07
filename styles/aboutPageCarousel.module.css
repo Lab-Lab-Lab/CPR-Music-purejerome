@@ -1,0 +1,104 @@
+.collabHide{
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+.collabOuterContain{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.collabShow{
+    opacity: 1;
+    z-index: 1;
+}
+
+.collabContain{
+    position: relative;
+    display: grid;
+    grid-template-areas: "stack";
+    width: 60%;
+    /* height: 1000%; */
+    /* background-color: blue; */
+}
+
+.collabContain > *{
+    grid-area: stack;
+    width: 100%;
+    height: 100%;
+}
+
+.collabContain div p{
+    display: flex;
+    justify-content: center;
+}
+
+.listContent{
+    font-size: 1.2rem;
+}
+
+.fullListContain{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 7;
+    background-color: rgba(33, 33, 33, 0.58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;;
+}
+
+.innerFullList{
+    position: relative;
+    width: 50%;
+    height: fit-content;
+    max-height: 80%;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+.exitButton{
+    position: sticky;
+    top: 2px;
+    left: 2px;
+    border-radius: 100px;
+    border-color: transparent;
+    width: 36px;
+    height: 36px;
+    background-color: red;
+    border-style: none;
+}
+
+.exitButton:active{
+    background-color: rgb(120, 2, 2);
+}
+
+
+@media screen and (max-width: 960px){
+    .listContent{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .innerFullList{
+        width: 90%;
+    }
+}
