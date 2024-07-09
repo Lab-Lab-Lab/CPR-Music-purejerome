@@ -5,10 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Layout from '../../components/layout';
 import { Alert } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Layout from '../../components/layout';
 
 // https://github.com/nextauthjs/next-auth/issues/2426#issuecomment-1141406105
 // try this instead?
@@ -40,31 +39,55 @@ export default function SignIn({ csrfToken }) {
           method="post"
           action="/api/auth/callback/credentials"
           className="mt-3"
-          style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
         >
           <input name="csrfToken" type="hidden" defaultValue={csrf} />
-          <Form.Group as={Row} className="mb-3 d-flex justify-content-center" controlId="formUsername" style={{ width: '100%' }}>
+          <Form.Group
+            as={Row}
+            className="mb-3 d-flex justify-content-center"
+            controlId="formUsername"
+            style={{ width: '100%' }}
+          >
             <Form.Label column sm={2}>
               Username
             </Form.Label>
             <Col md={4} xs={10}>
-              <Form.Control type="text" name="username" placeholder="Username" style={{ borderRadius: '30px', borderWidth: '3px' }} />
+              <Form.Control
+                type="text"
+                name="username"
+                placeholder="Username"
+                style={{ borderRadius: '30px', borderWidth: '3px' }}
+              />
             </Col>
           </Form.Group>
-          <Form.Group as={Row} className="mb-3 d-flex justify-content-center" controlId="formPassword" style={{ width: '100%' }}>
+          <Form.Group
+            as={Row}
+            className="mb-3 d-flex justify-content-center"
+            controlId="formPassword"
+            style={{ width: '100%' }}
+          >
             <Form.Label column sm={2}>
               Password
             </Form.Label>
             <Col md={4} xs={10}>
               <Form.Control
-                type={pass ? "text" : "password"}
+                type={pass ? 'text' : 'password'}
                 name="password"
                 placeholder="Password"
                 className="position-relative"
-                style={{ borderRadius: '30px', borderWidth: '3px', paddingRight: '50px' }}
+                style={{
+                  borderRadius: '30px',
+                  borderWidth: '3px',
+                  paddingRight: '50px',
+                }}
               />
               <button
-                type='button'
+                type="button"
                 onClick={viewPass}
                 className="position-absolute"
                 style={{
@@ -78,14 +101,23 @@ export default function SignIn({ csrfToken }) {
                   height: '30px',
                   display: 'flex',
                   justifyContent: 'center',
-                  alignItems: 'center'
+                  alignItems: 'center',
                 }}
               >
-                {pass ? <FaEyeSlash style={{ width: '30px', height: '30px' }} /> : <FaEye style={{ width: '30px', height: '30px' }} />}
+                {pass ? (
+                  <FaEyeSlash style={{ width: '30px', height: '30px' }} />
+                ) : (
+                  <FaEye style={{ width: '30px', height: '30px' }} />
+                )}
               </button>
             </Col>
           </Form.Group>
-          <Button type="submit" style={{ width: '100px', marginBottom: '3rem' }}>Sign in</Button>
+          <Button
+            type="submit"
+            style={{ width: '100px', marginBottom: '3rem' }}
+          >
+            Sign in
+          </Button>
           {error && <SignInError error={error} />}
         </Form>
       </Container>
@@ -122,7 +154,9 @@ function SignInError({ error = errors.default }) {
     <Alert variant="danger" style={{ width: 'fit-content' }}>
       {errorMessage}{' '}
       {error === 'CredentialsSignin' && (
-        <a href={`${process.env.NEXT_PUBLIC_BACKEND_HOST}/accounts/password/reset/`}>
+        <a
+          href={`${process.env.NEXT_PUBLIC_BACKEND_HOST}/accounts/password/reset/`}
+        >
           Forgot your password?
         </a>
       )}
