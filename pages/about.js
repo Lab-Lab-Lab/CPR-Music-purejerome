@@ -115,6 +115,7 @@ function About() {
           Abdullah Mohammed Ali (Undergraduate Student, James Madison
           University)
         </li>
+        <li>Jerome Donfack (Undergraduate Student, James Madison University)</li>
         <li>
           <a target="_blank" rel="noopener noreferrer" href="https://portfolium.com/AlexDumo" >Alex Dumouchelle</a>{' '}
           (Undergraduate Student, James Madison University)
@@ -173,6 +174,7 @@ function About() {
           (Lecturer in Computer Science, James Madison University)
         </li>
         <li>Isaiah Ortiz (Undergraduate Student, James Madison University)</li>
+        <li>Eliza Samuels (Undergraduate Student, James Madison University)</li>
         <li>Nathan Self (Consulting Musician and Web Developer)</li>
         <li>
           <a target="_blank" rel="noopener noreferrer" href="http://pawelwozniak.eu/">Paweł W. Woźniak, Ph.D.</a>{' '}
@@ -184,6 +186,8 @@ function About() {
           <a target="_blank" rel="noopener noreferrer" href="https://laurenyz.github.io/portfolio/">Lauren Yu</a> (Web
           Developer)
         </li>
+
+        <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/JoshuaAHairston">Joshua Hairston</a> (Undergraduate Student, James Madison University)</li>
       </ul>
     </Layout>
   );
