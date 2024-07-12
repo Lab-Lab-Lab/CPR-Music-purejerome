@@ -137,25 +137,27 @@ const collabs = [
   },
 ];
 
-function CarouselContainer({children}) {
-  return <div style={{width: '100%', marginBottom: '100px'}}>{children}</div>
+function CarouselContainer({ children }) {
+  return <div style={{ width: '100%', marginBottom: '100px' }}>{children}</div>;
 }
 
 function PeopleHeadings({ children }) {
-  return <h2 style={{textAlign: 'center'}}>{children}</h2>
+  return <h2 style={{ textAlign: 'center' }}>{children}</h2>;
 }
 
 function PeopleAbout() {
   return (
     <Layout>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '75vh',
-        paddingTop: '20px'
-      }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '75vh',
+          paddingTop: '20px',
+        }}
+      >
         <CarouselContainer>
           <PeopleHeadings>Investigators</PeopleHeadings>
           <AboutPageCarousel collabList={investCollabs} fullListID="invest" />
@@ -168,6 +170,5 @@ function PeopleAbout() {
     </Layout>
   );
 }
-
 
 export default PeopleAbout;
