@@ -183,6 +183,7 @@ function PeopleAbout() {
         style={{
           display: 'flex',
           flexDirection: 'column',
+          justifyContent: 'center',
           alignItems: 'center',
           paddingTop: '20px',
         }}
