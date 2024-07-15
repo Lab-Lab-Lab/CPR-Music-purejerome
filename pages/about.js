@@ -2,14 +2,13 @@
 
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import Layout from '../components/layout';
-import AboutPageCarousel from '../components/aboutPageCarousel';
 import styles from '../styles/about.module.css';
 
 function AboutHeading({ children }) {
   return <h1 className={styles.aboutHeading}>{children}</h1>;
 }
 
-function AboutSections({ children }) {
+function AboutSection({ children }) {
   return <div className={styles.aboutSection}>{children}</div>;
 }
 
@@ -53,7 +52,7 @@ function About() {
         }}
       >
         <AboutHeading>About MusicCPR</AboutHeading>
-        <AboutSections>
+        <AboutSection>
           <ParagraphSection>
             <p>
               <span className={styles.bold}>
@@ -70,16 +69,16 @@ function About() {
               <HyperLink href="http://www.nysed.gov/curriculum-instruction/arts-standards-implementation-resources">
                 Arts Learning Standards
               </HyperLink>
-              , Virginia&apos;s{' '}
+              ,{' '}
               <HyperLink href="https://doe.virginia.gov/testing/sol/standards_docs/fine_arts/2020/2020fasol-music.pdf">
-                Music Standards of Learning
+                Virginia&apos;s Music Standards of Learning
               </HyperLink>
               ).
             </p>
           </ParagraphSection>
           <FlexibleImage src="manplayingguitar.jpg" />
-        </AboutSections>
-        <AboutSections>
+        </AboutSection>
+        <AboutSection>
           <FlexibleImage src="teachingmusic.jpg" />
           <ParagraphSection>
             <p>
@@ -91,8 +90,8 @@ function About() {
               and composers.
             </p>
           </ParagraphSection>
-        </AboutSections>
-        <AboutSections>
+        </AboutSection>
+        <AboutSection>
           <ParagraphSection>
             <p>
               MusicCPR is housed at James Madison University, in a collaboration
@@ -106,17 +105,15 @@ function About() {
               </HyperLink>{' '}
               with collaborators at{' '}
               <HyperLink href="https://rochester.edu/">
-                University of Rochester
-              </HyperLink>
-              &apos;s{' '}
+                University of Rochester&apos;s
+              </HyperLink>{' '}
               <HyperLink href="https://www.esm.rochester.edu/">
                 Eastman School of Music
               </HyperLink>{' '}
               and in{' '}
               <HyperLink href="https://www.udel.edu/">
-                University of Delaware
-              </HyperLink>
-              &apos;s{' '}
+                University of Delaware&apos;s
+              </HyperLink>{' '}
               <HyperLink href="https://www.music.udel.edu/">
                 School of Music
               </HyperLink>
@@ -138,8 +135,8 @@ function About() {
             </p>
           </ParagraphSection>
           <FlexibleImage src="JMU.jpg" />
-        </AboutSections>
-        <AboutSections>
+        </AboutSection>
+        <AboutSection>
           <Card className={styles.outerCard}>
             <Card.Img
               variant="top"
@@ -152,28 +149,23 @@ function About() {
                 below.
               </Card.Text>
               <Button
-                variant="primary"
                 href="https://dukesfunder.jmu.edu/project/30270"
+                className={styles.aboutButton}
               >
                 Learn More
               </Button>
             </Card.Body>
           </Card>
-          <Button
-            variant="primary"
-            href="https://dukesfunder.jmu.edu/project/30270"
-            className={styles.aboutButton}
-          >
+          <Button href="/peopleAbout" className={styles.aboutButton}>
             People Page
           </Button>
           <Button
-            variant="primary"
             href="https://dukesfunder.jmu.edu/project/30270"
             className={styles.aboutButton}
           >
             Research Page
           </Button>
-        </AboutSections>
+        </AboutSection>
       </div>
     </Layout>
   );

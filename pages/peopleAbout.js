@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import Layout from '../components/layout';
 import AboutPageCarousel from '../components/aboutPageCarousel';
 
@@ -146,17 +147,47 @@ function PeopleHeadings({ children }) {
 }
 
 function PeopleAbout() {
+  const container = useRef(null);
+  const [loaded, setLoad] = useState(false);
+  function getHeight() {
+    console.log(container);
+    console.log(document.querySelector('#hi'));
+    if (container.current) {
+      const rect = document.querySelector('nav').getBoundingClientRect();
+      const { height } = rect;
+      const windowHeight = window.innerHeight;
+      container.current.style.height = `${windowHeight - height}px`;
+    }
+  }
+
+  // check if container is loaded
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (container.current) {
+        setLoad(true);
+        clearInterval(interval);
+      }
+    }, 0);
+  }, []);
+
+  // sets container height to auto fill to the bottom
+  useEffect(() => {
+    if (loaded) {
+      getHeight();
+      window.addEventListener('resize', getHeight);
+    }
+  }, [loaded]);
   return (
     <Layout>
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
           alignItems: 'center',
-          minHeight: '75vh',
           paddingTop: '20px',
         }}
+        ref={container}
+        id="hi"
       >
         <CarouselContainer>
           <PeopleHeadings>Investigators</PeopleHeadings>
