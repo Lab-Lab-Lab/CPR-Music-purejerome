@@ -1,0 +1,50 @@
+.heading2{
+    font-size: 2.6rem;
+    width: 65%;
+    min-width: fit-content;
+}
+
+.carouselContainer{
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divLine{
+    width: 70%;
+    height: 7px;
+    background-color: gray;
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.divLine::after, .divLine::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    top: 50%;
+}
+
+.divLine::before{
+    right: 0;
+    translate: 50% -50%;
+    clip-path: polygon(100% 50%, 0% 100%, 0% 0%);
+}
+
+.divLine::after{
+    border-radius: 50%;
+    left: 0;
+    translate: -50% -50%;
+}
+
+@media screen and (max-width: 800px) {
+    .carouselContainer{
+        width: 100%;
+    }
+}

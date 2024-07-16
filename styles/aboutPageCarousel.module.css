@@ -24,8 +24,6 @@
     display: grid;
     grid-template-areas: "stack";
     width: 60%;
-    /* height: 1000%; */
-    /* background-color: blue; */
 }
 
 .collabContain > *{

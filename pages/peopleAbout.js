@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Layout from '../components/layout';
 import AboutPageCarousel from '../components/aboutPageCarousel';
+import styles from '../styles/peopleAbout.module.css';
 
 const investCollabs = [
   {
@@ -139,25 +140,25 @@ const collabs = [
 ];
 
 function CarouselContainer({ children }) {
-  return <div style={{ width: '100%', marginBottom: '100px' }}>{children}</div>;
+  return <div className={styles.carouselContainer}>{children}</div>;
 }
 
 function PeopleHeadings({ children }) {
-  return <h2 style={{ textAlign: 'center' }}>{children}</h2>;
+  return <h2 className={styles.heading2}>{children}</h2>;
+}
+
+function DividerLine() {
+  return <div className={styles.divLine} />;
 }
 
 function PeopleAbout() {
   const container = useRef(null);
   const [loaded, setLoad] = useState(false);
   function getHeight() {
-    console.log(container);
-    console.log(document.querySelector('#hi'));
-    if (container.current) {
-      const rect = document.querySelector('nav').getBoundingClientRect();
-      const { height } = rect;
-      const windowHeight = window.innerHeight;
-      container.current.style.height = `${windowHeight - height}px`;
-    }
+    const rect = document.querySelector('nav').getBoundingClientRect();
+    const { height } = rect;
+    const windowHeight = window.innerHeight * 2;
+    container.current.style.height = `${windowHeight - height}px`;
   }
 
   // check if container is loaded
@@ -183,19 +184,18 @@ function PeopleAbout() {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
           alignItems: 'center',
-          paddingTop: '20px',
         }}
         ref={container}
-        id="hi"
       >
         <CarouselContainer>
           <PeopleHeadings>Investigators</PeopleHeadings>
+          <DividerLine />
           <AboutPageCarousel collabList={investCollabs} fullListID="invest" />
         </CarouselContainer>
         <CarouselContainer>
           <PeopleHeadings>Collaborators</PeopleHeadings>
+          <DividerLine />
           <AboutPageCarousel collabList={collabs} fullListID="collabs" />
         </CarouselContainer>
       </div>
