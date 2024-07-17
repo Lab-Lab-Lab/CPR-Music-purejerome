@@ -14,6 +14,16 @@
     justify-content: center;
 }
 
+.collabOuterContain a{
+    color: black;
+    transition: color 0.1s linear;
+    text-decoration: underline;
+}
+
+.collabOuterContain a:hover{
+    color: rgb(96, 96, 96);
+}
+
 .collabShow{
     opacity: 1;
     z-index: 1;
@@ -43,6 +53,7 @@
 
 .fullListContain{
     position: fixed;
+    color: black;
     top: 0;
     left: 0;
     width: 100vw;
