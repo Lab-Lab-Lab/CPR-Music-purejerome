@@ -27,7 +27,7 @@
 .divLine{
     width: 70%;
     height: 7px;
-    background-color: gray;
+    background-color: black;
     position: relative;
     margin-bottom: 35px;
 }
@@ -38,7 +38,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: gray;
+    background-color: black;
     top: 50%;
 }
 
