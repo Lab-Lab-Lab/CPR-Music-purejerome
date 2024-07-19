@@ -94,7 +94,7 @@ function SignOut() {
               fontSize: '1.7rem',
             }}
           >
-            Are you sure you want to Sign Out?
+            Are you sure you want to sign out?
           </h1>
           <Button style={{ width: '70%' }} onClick={logout}>
             Sign out
