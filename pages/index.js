@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect, useRef, forwardRef } from 'react';
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
@@ -8,41 +9,81 @@ import Layout from '../components/layout';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
-import { FaComment, FaLaughBeam, FaMicrophone, FaMicrophoneAlt } from 'react-icons/fa';
+import {
+  FaComment,
+  FaLaughBeam,
+  FaMicrophone,
+  FaMicrophoneAlt,
+} from 'react-icons/fa';
 import { FaTools } from 'react-icons/fa';
 import { FaRulerCombined } from 'react-icons/fa';
 import styles from '../styles/index.module.css';
 
 function Section({ children, style, id }) {
-  return <div className={styles.container} style={style} id={id}>{children}</div>
+  return (
+    <div className={styles.container} style={style} id={id}>
+      {children}
+    </div>
+  );
 }
 
 function GridContainer({ children, style, id }) {
-  return <div className={styles.gridContainer} style={style} id={id}>{children}</div>
+  return (
+    <div className={styles.gridContainer} style={style} id={id}>
+      {children}
+    </div>
+  );
 }
 
 function CPRCContainer({ children, style, id, scrollID }) {
   function scrollTo() {
     document.getElementById(scrollID).scrollIntoView({
       behavior: 'smooth',
-    })
-  };
-  return <div className={styles.cprcContainer} style={style} id={id} onClick={scrollTo}>{children}</div>
+    });
+  }
+  return (
+    <div
+      className={styles.cprcContainer}
+      style={style}
+      id={id}
+      onClick={scrollTo}
+    >
+      {children}
+    </div>
+  );
 }
 
 const BackToTop = forwardRef(({ style, id }, ref) => {
   function scrollTo() {
     window.scrollTo(0, 0);
-  };
-  return <button className={styles.backToTopButton} style={style} id={id} ref={ref} onClick={scrollTo}>Back To Top</button>
+  }
+  return (
+    <button
+      className={styles.backToTopButton}
+      style={style}
+      id={id}
+      ref={ref}
+      onClick={scrollTo}
+    >
+      Back To Top
+    </button>
+  );
 });
 
 function InfoContainer({ children, style, id }) {
-  return <div className={styles.infoContainer} style={style} id={id}>{children}</div>
+  return (
+    <div className={styles.infoContainer} style={style} id={id}>
+      {children}
+    </div>
+  );
 }
 
 function Desciption({ children, style, id }) {
-  return <div className={styles.descContainer} style={style} id={id}><p>{children}</p></div>
+  return (
+    <div className={styles.descContainer} style={style} id={id}>
+      <p>{children}</p>
+    </div>
+  );
 }
 
 function SectionHeading({ title, style, id, img }) {
@@ -56,7 +97,7 @@ function SectionHeading({ title, style, id, img }) {
 }
 
 function Index() {
-  let button = useRef(null);
+  const button = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -65,11 +106,8 @@ function Index() {
             if (button.current) {
               button.current.classList.remove(styles.buttonView);
             }
-          }
-          else {
-            if (button.current) {
-              button.current.classList.add(styles.buttonView);
-            }
+          } else if (button.current) {
+            button.current.classList.add(styles.buttonView);
           }
         });
       },
@@ -84,10 +122,18 @@ function Index() {
     <Layout noPadding>
       <Section id="top">
         <GridContainer>
-          <CPRCContainer scrollID="create"><h2>Create</h2></CPRCContainer>
-          <CPRCContainer scrollID="perform"><h2>Perform</h2></CPRCContainer>
-          <CPRCContainer scrollID="respond"><h2>Respond</h2></CPRCContainer>
-          <CPRCContainer scrollID="connect"><h2>Connect</h2></CPRCContainer>
+          <CPRCContainer scrollID="create">
+            <h2>Create</h2>
+          </CPRCContainer>
+          <CPRCContainer scrollID="perform">
+            <h2>Perform</h2>
+          </CPRCContainer>
+          <CPRCContainer scrollID="respond">
+            <h2>Respond</h2>
+          </CPRCContainer>
+          <CPRCContainer scrollID="connect">
+            <h2>Connect</h2>
+          </CPRCContainer>
         </GridContainer>
       </Section>
       <Section id="create" style={{ backgroundColor: 'rgb(255, 126, 126)' }}>

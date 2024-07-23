@@ -56,7 +56,11 @@
     border-style: solid;
     border-radius: 1px;
     border-width: 3px;
-    transition: scale 0.3s ease-in-out, color 0.1s, border-color 0.1s, background-color 0.1s;
+    transition: 
+        scale 0.3s ease-in-out, 
+        color 0.1s, border-color 0.1s, 
+        background-color 0.1s,
+        box-shadow 0.08s ease-in-out;
     cursor: pointer;
     user-select: none;
 }
@@ -82,6 +86,7 @@
 }
 .cprcContainer:nth-of-type(1):active{
     background-color: rgba(81, 190, 226, 0.418);
+    box-shadow: 0px 0px 0px 9px rgba(1, 104, 139, 0.418);
 }
 
 .cprcContainer:nth-of-type(2){
@@ -90,6 +95,7 @@
 }
 .cprcContainer:nth-of-type(2):active{
     background-color: rgba(130,149,211,0.418);
+    box-shadow: 0px 0px 0px 9px rgba(33, 75, 213, 0.418);
 }
 
 .cprcContainer:nth-of-type(3){
@@ -98,6 +104,7 @@
 }
 .cprcContainer:nth-of-type(3):active{
     background-color: rgba(255,50,71,0.418);
+    box-shadow: 0px 0px 0px 9px rgba(152, 0, 15, 0.418);
 }
 
 .cprcContainer:nth-of-type(4){
@@ -106,6 +113,7 @@
 }
 .cprcContainer:nth-of-type(4):active{
     background-color: rgba(250,123,54,0.418);
+    box-shadow: 0px 0px 0px 9px rgba(181, 65, 3, 0.418);
 }
 
 .backToTopButton{
@@ -136,7 +144,6 @@
     background-color: rgba(0, 0, 0, 0.685);
     border-color: rgba(255, 255, 255, 0.422);
     scale: 1.07;
-    /* transform: translateX(-103%); */
 }
 
 .buttonView{
@@ -152,6 +159,7 @@
     align-items: center;
     justify-content: center;
     font-family: 'Libre Franklin', sans-serif;
+    user-select: none;
 }
 
 .container:nth-of-type(2){
