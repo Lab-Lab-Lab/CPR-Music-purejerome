@@ -1,8 +1,8 @@
 .collabHide{
     width: 100%;
     opacity: 0;
-    z-index: -1;
-    transition: opacity 0.5s ease;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .collabOuterContain{
@@ -26,7 +26,7 @@
 
 .collabShow{
     opacity: 1;
-    z-index: 1;
+    pointer-events: auto;
 }
 
 .collabContain{
