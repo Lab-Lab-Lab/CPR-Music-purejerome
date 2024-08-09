@@ -96,6 +96,10 @@ function SectionHeading({ title, style, id, img }) {
   );
 }
 
+function VideoContainer({ children }) {
+  return <div className={styles.videoContainer}>{children}</div>;
+}
+
 function Index() {
   const button = useRef(null);
   useEffect(() => {
@@ -121,20 +125,36 @@ function Index() {
   return (
     <Layout noPadding>
       <Section id="top">
-        <GridContainer>
-          <CPRCContainer scrollID="create">
-            <h2>Create</h2>
-          </CPRCContainer>
-          <CPRCContainer scrollID="perform">
-            <h2>Perform</h2>
-          </CPRCContainer>
-          <CPRCContainer scrollID="respond">
-            <h2>Respond</h2>
-          </CPRCContainer>
-          <CPRCContainer scrollID="connect">
-            <h2>Connect</h2>
-          </CPRCContainer>
-        </GridContainer>
+        <VideoContainer>
+          <GridContainer style={{ position: 'absolute' }}>
+            <CPRCContainer scrollID="create">
+              <h2>Create</h2>
+            </CPRCContainer>
+            <CPRCContainer scrollID="perform">
+              <h2>Perform</h2>
+            </CPRCContainer>
+            <CPRCContainer scrollID="respond">
+              <h2>Respond</h2>
+            </CPRCContainer>
+            <CPRCContainer scrollID="connect">
+              <h2>Connect</h2>
+            </CPRCContainer>
+          </GridContainer>
+          <p
+            style={{
+              fontSize: '1.3rem',
+              color: 'white',
+              width: 'fit-content',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: '0',
+            }}
+          >
+            THIS BLUE AREA WILL CONTAIN A VIDEO
+          </p>
+        </VideoContainer>
       </Section>
       <Section id="create" style={{ backgroundColor: 'rgb(255, 126, 126)' }}>
         <InfoContainer>
