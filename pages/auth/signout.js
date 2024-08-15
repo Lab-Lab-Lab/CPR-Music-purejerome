@@ -4,10 +4,9 @@ import Row from 'react-bootstrap/Row';
 import { signOut, useSession } from 'next-auth/react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import { useRef, useEffect, useState } from 'react';
 import Layout from '../../components/layout';
 import { logoutUser } from '../../actions';
-import { useRouter } from 'next/router';
-import { useRef, useEffect, useState } from 'react';
 
 function SignOut() {
   const router = useRouter();
