@@ -140,7 +140,7 @@ function Index() {
               <h2>Connect</h2>
             </CPRCContainer>
           </GridContainer>
-          <p
+          {/* <p
             style={{
               fontSize: '1.3rem',
               color: 'white',
@@ -153,7 +153,7 @@ function Index() {
             }}
           >
             THIS BLUE AREA WILL CONTAIN A VIDEO
-          </p>
+          </p> */}
         </VideoContainer>
       </Section>
       <Section id="create" style={{ backgroundColor: 'rgb(255, 126, 126)' }}>
